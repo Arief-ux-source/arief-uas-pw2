@@ -1,0 +1,395 @@
+/* ============================================================
+   RESPONSIVE STYLES
+   ============================================================ */
+
+/* --------------------------------------------
+   EXTRA SMALL (≤380px)
+-------------------------------------------- */
+@media (max-width: 380px) {
+    #appContent {
+        padding: 12px 14px 80px;
+    }
+
+    .app-header {
+        padding: 0 14px;
+        height: 56px;
+    }
+
+    .logo span {
+        font-size: 17px;
+    }
+
+    .logo small {
+        font-size: 9px;
+    }
+
+    .balance-card h1 {
+        font-size: 24px;
+    }
+
+    .balance-card {
+        padding: 18px;
+    }
+
+    .service-grid {
+        gap: 8px;
+    }
+
+    .service-card {
+        padding: 12px 6px;
+    }
+
+    .service-card img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .summary-grid {
+        gap: 6px;
+    }
+
+    .summary-card {
+        padding: 12px 6px;
+    }
+
+    .summary-card h2 {
+        font-size: 15px;
+    }
+
+    .bottom-nav {
+        height: 60px;
+    }
+
+    .nav-item {
+        min-width: 40px;
+    }
+
+    .nav-item i {
+        font-size: 17px;
+    }
+
+    .nav-item.center i {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .service-select-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .provider-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .history-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .spp-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .spp-list-header {
+        display: none;
+    }
+
+    .spp-item {
+        grid-template-columns: 25px 1fr 40px;
+        gap: 6px;
+        padding: 10px 12px;
+    }
+
+    .spp-item span:first-child {
+        grid-row: 1 / 2;
+    }
+
+    .spp-item div {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .spp-item .spp-amount {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        text-align: left;
+    }
+
+    .spp-item .spp-status {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        text-align: left;
+    }
+
+    .spp-item .spp-checkbox {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    #toast {
+        font-size: 12px;
+        padding: 10px 14px;
+        bottom: 76px;
+    }
+
+    .modal-content {
+        padding: 18px;
+    }
+}
+
+/* --------------------------------------------
+   SMALL (381-480px)
+-------------------------------------------- */
+@media (min-width: 381px) and (max-width: 480px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .provider-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .history-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spp-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --------------------------------------------
+   TABLETS (481-768px)
+-------------------------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    #app {
+        max-width: 100%;
+        padding: 0 24px;
+    }
+
+    #appContent {
+        padding: 20px 0 90px;
+    }
+
+    .bottom-nav {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .provider-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .history-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --------------------------------------------
+   DESKTOP (≥769px)
+-------------------------------------------- */
+@media (min-width: 769px) {
+    body {
+        background: #E2E6EA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    body.dark {
+        background: #0A0F1A;
+    }
+
+    #app {
+        max-width: 430px;
+        margin: 0;
+        border-radius: var(--radius-xl);
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12);
+        min-height: calc(100vh - 40px);
+        max-height: calc(100vh - 40px);
+        overflow: hidden;
+    }
+
+    #appContent {
+        overflow-y: auto;
+        max-height: calc(100vh - 170px);
+        padding: 16px 20px 20px;
+    }
+
+    .bottom-nav {
+        max-width: 430px;
+        border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .provider-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .history-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --------------------------------------------
+   LANDSCAPE ORIENTATION
+-------------------------------------------- */
+@media (max-height: 600px) and (orientation: landscape) {
+    .app-header {
+        height: 48px;
+        padding: 0 16px;
+    }
+
+    .logo i {
+        font-size: 18px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    #appContent {
+        padding: 10px 16px 70px;
+    }
+
+    .balance-card {
+        padding: 14px 18px;
+        margin-bottom: 12px;
+    }
+
+    .balance-card h1 {
+        font-size: 22px;
+        margin: 4px 0 10px;
+    }
+
+    .balance-action .mini-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .service-grid {
+        gap: 8px;
+    }
+
+    .service-card {
+        padding: 10px 6px;
+    }
+
+    .service-card img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .section-title {
+        font-size: 14px;
+        margin: 12px 0 8px;
+    }
+
+    .card {
+        padding: 14px;
+        margin-bottom: 10px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .bottom-nav {
+        height: 52px;
+    }
+
+    .nav-item i {
+        font-size: 16px;
+    }
+
+    .nav-item.center i {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .summary-grid {
+        gap: 6px;
+    }
+
+    .summary-card {
+        padding: 10px 6px;
+    }
+
+    .summary-card h2 {
+        font-size: 15px;
+    }
+
+    .provider-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .provider-card {
+        padding: 8px 4px;
+    }
+
+    .provider-card img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .nominal-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nominal-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .history-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spp-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spp-item {
+        padding: 6px 10px;
+    }
+
+    .spp-list-header {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+}
+
+/* --------------------------------------------
+   REDUCED MOTION
+-------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

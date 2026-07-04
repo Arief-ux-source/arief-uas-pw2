@@ -1,0 +1,599 @@
+/* ============================================================
+   PULSA STYLES
+   ============================================================ */
+
+/* --------------------------------------------
+   PROVIDER GRID
+-------------------------------------------- */
+.provider-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.provider-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 14px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.provider-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.provider-card.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.06);
+}
+
+body.dark .provider-card.active {
+    background: rgba(15, 157, 138, 0.1);
+}
+
+.provider-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 6px;
+}
+
+.provider-card span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.provider-card.active span {
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   NOMINAL LIST
+-------------------------------------------- */
+.nominal-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.nominal-btn {
+    padding: 10px 12px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nominal-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.nominal-btn.active {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+}
+
+body.dark .nominal-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* --------------------------------------------
+   PAKET LIST
+-------------------------------------------- */
+.paket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.paket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.paket-item:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+.paket-item.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+body.dark .paket-item.active {
+    background: rgba(15, 157, 138, 0.1);
+}
+
+.paket-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.paket-item strong {
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.paket-item small {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.paket-item span {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   PAYMENT METHODS - SAMA DENGAN BILL
+-------------------------------------------- */
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.payment-method-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.payment-method-card.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.08);
+}
+
+body.dark .payment-method-card.active {
+    background: rgba(15, 157, 138, 0.12);
+}
+
+.payment-method-icon {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.payment-method-info strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.payment-method-info small {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.payment-method-card .fa-chevron-right {
+    display: none;
+}
+
+/* --------------------------------------------
+   BANK GRID
+-------------------------------------------- */
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.bank-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.bank-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.bank-item.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.08);
+}
+
+body.dark .bank-item.active {
+    background: rgba(15, 157, 138, 0.12);
+}
+
+.bank-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 4px;
+    border-radius: 8px;
+}
+
+.bank-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.bank-item.active span {
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   CASHIER GRID - UNTUK KASIR
+-------------------------------------------- */
+.cashier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.cashier-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 14px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cashier-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.cashier-item.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.08);
+}
+
+body.dark .cashier-item.active {
+    background: rgba(15, 157, 138, 0.12);
+}
+
+.cashier-item img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 6px;
+    border-radius: 8px;
+}
+
+.cashier-item span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.cashier-item.active span {
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   PAYMENT DETAIL - SAMA DENGAN BILL
+-------------------------------------------- */
+.payment-detail-card {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-top: 12px;
+    border: 1px solid var(--border);
+}
+
+.payment-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.payment-detail-header i {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.payment-detail-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.va-number,
+.cash-code {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.va-number label,
+.cash-code label {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.va-code,
+.cash-code-display {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+    padding: 8px 0;
+}
+
+/* --------------------------------------------
+   QRIS
+-------------------------------------------- */
+.qris-container {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.qrcode {
+    display: inline-block;
+    padding: 8px;
+    background: white;
+    border-radius: var(--radius-sm);
+}
+
+.qrcode canvas,
+.qrcode img {
+    display: block;
+    width: 160px !important;
+    height: 160px !important;
+}
+
+.qris-timer {
+    margin-top: 12px;
+}
+
+.qris-timer span {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.qris-timer h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 4px 0 0;
+    color: var(--danger);
+    font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------
+   INSTRUCTIONS
+-------------------------------------------- */
+.payment-instructions {
+    margin: 16px 0;
+}
+
+.payment-instructions h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-instructions h4 i {
+    color: var(--primary);
+}
+
+.payment-instructions ol,
+.payment-instructions ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.payment-instructions li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2px;
+}
+
+.payment-instructions li strong {
+    color: var(--text-primary);
+}
+
+/* --------------------------------------------
+   COPY BUTTON
+-------------------------------------------- */
+.copy-btn {
+    background: var(--border);
+    border: none;
+    padding: 4px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+}
+
+.copy-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+body.dark .copy-btn {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+}
+
+body.dark .copy-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* --------------------------------------------
+   BILL DETAIL
+-------------------------------------------- */
+.bill-detail {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin: 12px 0;
+}
+
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.bill-row:last-child {
+    border-bottom: none;
+}
+
+.bill-row span {
+    color: var(--text-secondary);
+}
+
+.bill-row strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.bill-row.total {
+    border-top: 2px solid var(--primary);
+    padding-top: 12px;
+    margin-top: 4px;
+}
+
+.bill-row.total span {
+    font-weight: 600;
+}
+
+.bill-row.total strong {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   RESPONSIVE
+-------------------------------------------- */
+@media (max-width: 480px) {
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .payment-method-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 14px;
+        text-align: left;
+    }
+    
+    .payment-method-icon {
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+    
+    .payment-method-card .fa-chevron-right {
+        display: block;
+        margin-left: auto;
+        color: var(--text-muted);
+    }
+    
+    .payment-method-card.active .fa-chevron-right {
+        color: var(--primary);
+    }
+    
+    .bank-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .bank-item img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .cashier-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cashier-item img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 380px) {
+    .bank-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cashier-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .provider-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

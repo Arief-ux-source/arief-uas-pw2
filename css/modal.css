@@ -1,0 +1,77 @@
+/* ============================================================
+   MODAL STYLES
+   ============================================================ */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    max-width: 400px;
+    width: 92%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.modal-content h2 i {
+    margin-right: 8px;
+}
+
+.modal-content hr {
+    margin: 12px 0;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+
+.modal-content .btn {
+    margin-top: 4px;
+}
+
+.modal-content .btn + .btn {
+    margin-top: 8px;
+}
+
+/* --------------------------------------------
+   DARK MODE
+-------------------------------------------- */
+body.dark .modal-content {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+body.dark .modal-content hr {
+    border-color: var(--border);
+}

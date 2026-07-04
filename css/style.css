@@ -1,0 +1,1285 @@
+/* ============================================================
+   SAPA - GLOBAL STYLES
+   Versi 1.0
+   ============================================================ */
+
+/* --------------------------------------------
+   1. RESET & BASE
+-------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F0F2F5;
+    color: #1A1A2E;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------
+   2. CSS VARIABLES
+-------------------------------------------- */
+:root {
+    /* Brand Colors */
+    --primary: #0F9D8A;
+    --primary-dark: #0B7D6D;
+    --primary-light: #E8F5F2;
+    --primary-gradient: linear-gradient(135deg, #0F9D8A, #0B7D6D);
+
+    /* Semantic Colors */
+    --success: #22C55E;
+    --success-light: #DCFCE7;
+    --danger: #EF4444;
+    --danger-light: #FEE2E2;
+    --warning: #F59E0B;
+    --warning-light: #FEF3C7;
+    --info: #3B82F6;
+    --info-light: #DBEAFE;
+
+    /* Text Colors */
+    --text-primary: #1A1A2E;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    --text-white: #FFFFFF;
+
+    /* Background Colors */
+    --bg-app: #F0F2F5;
+    --bg-card: #FFFFFF;
+    --bg-hover: #F8FAFC;
+    --bg-input: #FFFFFF;
+
+    /* Border Colors */
+    --border: #E5E7EB;
+    --border-focus: #0F9D8A;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    /* Transitions */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Layout */
+    --app-max-width: 430px;
+    --header-height: 64px;
+    --nav-height: 68px;
+}
+
+/* --------------------------------------------
+   3. DARK MODE
+-------------------------------------------- */
+body.dark {
+    --bg-app: #0F172A;
+    --bg-card: #1E293B;
+    --bg-hover: #273548;
+    --bg-input: #1E293B;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border: #334155;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    background: var(--bg-app);
+}
+
+/* --------------------------------------------
+   4. APP CONTAINER
+-------------------------------------------- */
+#app {
+    max-width: var(--app-max-width);
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--bg-app);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* --------------------------------------------
+   5. HEADER
+-------------------------------------------- */
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 64px;
+    padding: 0 20px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ----- LOGO DENGAN PNG ----- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.logo-version {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: var(--border);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 2px;
+}
+
+/* ----- DARK MODE ----- */
+body.dark .logo-text {
+    color: var(--text-primary);
+}
+
+body.dark .logo-version {
+    background: var(--bg-hover);
+    color: var(--text-muted);
+}
+
+/* ----- DARK MODE TOGGLE ----- */
+#toggleDark {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#toggleDark:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+body.dark #toggleDark {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+}
+
+body.dark #toggleDark:hover {
+    background: rgba(15, 157, 138, 0.15);
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   6. CONTENT
+-------------------------------------------- */
+#appContent {
+    flex: 1;
+    padding: 16px 20px 90px;
+}
+
+/* --------------------------------------------
+   7. BOTTOM NAVIGATION
+-------------------------------------------- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--app-max-width);
+    height: var(--nav-height);
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+    min-width: 48px;
+}
+
+.nav-item i {
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.nav-item span {
+    font-size: 10px;
+}
+
+.nav-item:hover {
+    color: var(--text-secondary);
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+.nav-item.active i {
+    transform: translateY(-2px);
+}
+
+.nav-item.center {
+    position: relative;
+    margin-top: -16px;
+}
+
+.nav-item.center i {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 16px rgba(15, 157, 138, 0.3);
+    transition: var(--transition);
+}
+
+.nav-item.center:hover i {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(15, 157, 138, 0.4);
+}
+
+.nav-item.center.active i {
+    box-shadow: 0 6px 24px rgba(15, 157, 138, 0.5);
+}
+
+/* --------------------------------------------
+   8. CARDS
+-------------------------------------------- */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    margin-bottom: 16px;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.card h2 i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.card .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.card .card-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+/* --------------------------------------------
+   9. FORM ELEMENTS
+-------------------------------------------- */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.form-group label i {
+    margin-right: 6px;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.form-group small i {
+    margin-right: 4px;
+}
+
+/* --------------------------------------------
+   10. BUTTONS
+-------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.btn i {
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: var(--text-white);
+    box-shadow: 0 4px 16px rgba(15, 157, 138, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(15, 157, 138, 0.35);
+}
+
+.btn-secondary {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: var(--text-white);
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.25);
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(239, 68, 68, 0.35);
+}
+
+.btn-success {
+    background: var(--success);
+    color: var(--text-white);
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.25);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(34, 197, 94, 0.35);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+/* --------------------------------------------
+   11. BADGE
+-------------------------------------------- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-success {
+    background: var(--success-light);
+    color: #166534;
+}
+
+.badge-danger {
+    background: var(--danger-light);
+    color: #991B1B;
+}
+
+.badge-warning {
+    background: var(--warning-light);
+    color: #92400E;
+}
+
+body.dark .badge-success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ADE80;
+}
+
+body.dark .badge-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #F87171;
+}
+
+body.dark .badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #FBBF24;
+}
+
+/* --------------------------------------------
+   12. TOAST
+-------------------------------------------- */
+#toast {
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+}
+
+#toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+#toast.success {
+    border-left: 4px solid var(--success);
+}
+
+#toast.error {
+    border-left: 4px solid var(--danger);
+}
+
+#toast.info {
+    border-left: 4px solid var(--info);
+}
+
+#toast i {
+    font-size: 18px;
+}
+
+#toast.success i {
+    color: var(--success);
+}
+
+#toast.error i {
+    color: var(--danger);
+}
+
+#toast.info i {
+    color: var(--info);
+}
+
+/* --------------------------------------------
+   13. LOADING
+-------------------------------------------- */
+.loading {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loading.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--text-white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.loading p {
+    color: var(--text-white);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --------------------------------------------
+   14. MODAL
+-------------------------------------------- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    max-width: 400px;
+    width: 92%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.modal-content h2 i {
+    margin-right: 8px;
+}
+
+.modal-content hr {
+    margin: 12px 0;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+
+/* --------------------------------------------
+   15. INITIAL LOADING
+-------------------------------------------- */
+.initial-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 16px;
+}
+
+.initial-loading .spinner {
+    border-color: rgba(15, 157, 138, 0.1);
+    border-top-color: var(--primary);
+}
+
+.initial-loading p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* --------------------------------------------
+   16. UTILITIES
+-------------------------------------------- */
+.mt-1 {
+    margin-top: 8px;
+}
+.mt-2 {
+    margin-top: 16px;
+}
+.mt-3 {
+    margin-top: 24px;
+}
+
+.mb-1 {
+    margin-bottom: 8px;
+}
+.mb-2 {
+    margin-bottom: 16px;
+}
+.mb-3 {
+    margin-bottom: 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-muted {
+    color: var(--text-muted);
+}
+.text-primary {
+    color: var(--primary);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------
+   17. SCROLLBAR
+-------------------------------------------- */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* --------------------------------------------
+   18. PRINT
+-------------------------------------------- */
+@media print {
+    .app-header,
+    .bottom-nav,
+    .btn,
+    #toast,
+    #loading,
+    #toggleDark {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+    }
+
+    #app {
+        max-width: 100% !important;
+        box-shadow: none !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .modal {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: none !important;
+        backdrop-filter: none !important;
+    }
+
+    .modal-content {
+        transform: none !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+    }
+
+    .modal-content .btn {
+        display: none !important;
+    }
+}
+
+/* ============================================================
+   LOADING OVERLAY - FULL SCREEN SPINNER
+   ============================================================ */
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.loading-overlay .loading-spinner {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.loading-overlay .spinner-ring {
+    width: 64px;
+    height: 64px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #FFFFFF;
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.loading-overlay .spinner-ring::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 3px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    animation: pulse-ring 1.5s ease-in-out infinite;
+}
+
+.loading-overlay .loading-text {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.loading-overlay .loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.3); opacity: 0.1; }
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* --------------------------------------------
+   INITIAL LOADING
+-------------------------------------------- */
+.initial-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 16px;
+}
+
+.initial-loading .spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(15, 157, 138, 0.1);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.initial-loading p {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ============================================================
+   SKELETON LOADING (Untuk Cek Tagihan)
+   ============================================================ */
+
+.skeleton {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 16px;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--border) 25%, var(--bg-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    margin-bottom: 10px;
+}
+
+.skeleton-line:last-child {
+    margin-bottom: 0;
+}
+
+.skeleton-line.short {
+    width: 60%;
+}
+
+.skeleton-line.medium {
+    width: 80%;
+}
+
+@keyframes skeleton-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* --------------------------------------------
+   BUTTON LOADING STATE
+-------------------------------------------- */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #FFFFFF;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+.btn-loading.btn-secondary::after {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--primary);
+}
+
+/* --------------------------------------------
+   MODAL - PASTIKAN TINGGI
+-------------------------------------------- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    max-width: 400px;
+    width: 92%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+/* ============================================================
+   LOADING STATE - SPINNER & SKELETON
+   ============================================================ */
+
+/* --------------------------------------------
+   LOADING OVERLAY (Full Page)
+-------------------------------------------- */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loading-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-overlay .spinner-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.loading-overlay .spinner-ring {
+    width: 64px;
+    height: 64px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid #FFFFFF;
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.loading-overlay .spinner-ring::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 4px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    animation: pulse-ring 1.5s ease-in-out infinite;
+}
+
+.loading-overlay .loading-text {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.loading-overlay .loading-text .loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.1; }
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* --------------------------------------------
+   SKELETON LOADING (Untuk Halaman)
+-------------------------------------------- */
+.skeleton {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 16px;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--border) 25%, var(--bg-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    margin-bottom: 10px;
+}
+
+.skeleton-line:last-child {
+    margin-bottom: 0;
+}
+
+.skeleton-line.short {
+    width: 60%;
+}
+
+.skeleton-line.medium {
+    width: 80%;
+}
+
+.skeleton-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, var(--border) 25%, var(--bg-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.skeleton-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 16px 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.skeleton-card .skeleton-circle {
+    margin: 0 auto 8px;
+}
+
+.skeleton-card .skeleton-line {
+    margin: 4px auto;
+    max-width: 80%;
+}
+
+@keyframes skeleton-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* --------------------------------------------
+   BUTTON LOADING STATE
+-------------------------------------------- */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #FFFFFF;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+.btn-loading.btn-secondary::after {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--primary);
+}
+
+/* --------------------------------------------
+   INLINE LOADING (Untuk Cek Tagihan)
+-------------------------------------------- */
+.loading-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.loading-inline .spinner-small {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--border);
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* --------------------------------------------
+   INITIAL LOADING (Saat Aplikasi Dibuka)
+-------------------------------------------- */
+.initial-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 20px;
+}
+
+.initial-loading .logo-loading {
+    font-size: 48px;
+    color: var(--primary);
+    animation: pulse-logo 1.5s ease-in-out infinite;
+}
+
+.initial-loading .spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(15, 157, 138, 0.1);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.initial-loading p {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes pulse-logo {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+}

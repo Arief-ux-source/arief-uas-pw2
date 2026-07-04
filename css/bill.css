@@ -1,0 +1,618 @@
+/* ============================================================
+   BILL / TAGIHAN STYLES
+   ============================================================ */
+
+/* --------------------------------------------
+   SERVICE SELECT
+-------------------------------------------- */
+.service-select-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.service-select-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.service-select-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.service-select-item.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.08);
+}
+
+body.dark .service-select-item.active {
+    background: rgba(15, 157, 138, 0.12);
+}
+
+.service-select-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 4px;
+}
+
+.service-select-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.service-select-item.active span {
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   BILL DETAIL
+-------------------------------------------- */
+.bill-detail {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin: 12px 0;
+}
+
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.bill-row:last-child {
+    border-bottom: none;
+}
+
+.bill-row span {
+    color: var(--text-secondary);
+}
+
+.bill-row strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.bill-row.total {
+    border-top: 2px solid var(--primary);
+    padding-top: 12px;
+    margin-top: 4px;
+}
+
+.bill-row.total span {
+    font-weight: 600;
+}
+
+.bill-row.total strong {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   PAYMENT METHODS
+-------------------------------------------- */
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+.payment-method.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.06);
+}
+
+body.dark .payment-method.active {
+    background: rgba(15, 157, 138, 0.1);
+}
+
+.payment-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.payment-icon i {
+    font-size: 18px;
+    color: var(--primary);
+}
+
+body.dark .payment-icon {
+    background: rgba(15, 157, 138, 0.15);
+}
+
+.payment-info {
+    flex: 1;
+}
+
+.payment-info strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.payment-info small {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.payment-method .fa-chevron-right {
+    color: var(--text-muted);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.payment-method.active .fa-chevron-right {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* --------------------------------------------
+   PAYMENT DETAIL
+-------------------------------------------- */
+.payment-detail-card {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-top: 12px;
+    border: 1px solid var(--border);
+}
+
+.payment-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.payment-detail-header i {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.payment-detail-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.va-number,
+.cash-code {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.va-number label,
+.cash-code label {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.va-code,
+.cash-code-display {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+    padding: 8px 0;
+}
+
+.copy-btn {
+    background: var(--border);
+    border: none;
+    padding: 4px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+}
+
+.copy-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+body.dark .copy-btn {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+}
+
+body.dark .copy-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* --------------------------------------------
+   QRIS
+-------------------------------------------- */
+.qris-container {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.qrcode {
+    display: inline-block;
+    padding: 8px;
+    background: white;
+    border-radius: var(--radius-sm);
+}
+
+.qrcode canvas,
+.qrcode img {
+    display: block;
+    width: 160px !important;
+    height: 160px !important;
+}
+
+.qris-timer {
+    margin-top: 12px;
+}
+
+.qris-timer span {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.qris-timer h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 4px 0 0;
+    color: var(--danger);
+    font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------
+   INSTRUCTIONS
+-------------------------------------------- */
+.payment-instructions {
+    margin: 16px 0;
+}
+
+.payment-instructions h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-instructions h4 i {
+    color: var(--primary);
+}
+
+.payment-instructions ol,
+.payment-instructions ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.payment-instructions li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2px;
+}
+
+.payment-instructions li strong {
+    color: var(--text-primary);
+}
+
+.location-list {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.location-list li {
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    border: 1px solid var(--border);
+}
+
+.location-list li i {
+    color: var(--primary);
+    width: 20px;
+}
+
+body.dark .location-list li {
+    background: var(--bg-hover);
+}
+
+/* --------------------------------------------
+   RECEIPT
+-------------------------------------------- */
+.receipt {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.receipt-header {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.receipt-icon {
+    font-size: 48px;
+    margin-bottom: 4px;
+}
+
+.receipt-header h2 {
+    color: var(--success);
+    margin: 0;
+    font-size: 20px;
+}
+
+.receipt-header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.receipt-body {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin: 12px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.receipt-row:last-child {
+    border-bottom: none;
+}
+
+.receipt-row.total {
+    padding-top: 12px;
+    margin-top: 6px;
+    border-top: 2px solid var(--primary);
+}
+
+.receipt-row span {
+    color: var(--text-secondary);
+}
+
+.receipt-row strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.receipt-row.total strong {
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.receipt-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+/* ============================================================
+   BILL / TAGIHAN STYLES
+   ============================================================ */
+
+/* ... (kode sebelumnya) ... */
+
+/* --------------------------------------------
+   PAYMENT METHODS GRID
+-------------------------------------------- */
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.payment-method-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.payment-method-card.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.08);
+}
+
+body.dark .payment-method-card.active {
+    background: rgba(15, 157, 138, 0.12);
+}
+
+.payment-method-icon {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.payment-method-info strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.payment-method-info small {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.payment-method-card .fa-chevron-right {
+    display: none;
+}
+
+/* --------------------------------------------
+   BANK GRID
+-------------------------------------------- */
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.bank-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.bank-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.bank-item.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(15, 157, 138, 0.08);
+}
+
+body.dark .bank-item.active {
+    background: rgba(15, 157, 138, 0.12);
+}
+
+.bank-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 4px;
+    border-radius: 8px;
+}
+
+.bank-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.bank-item.active span {
+    color: var(--primary);
+}
+
+/* --------------------------------------------
+   RESPONSIVE - BANK GRID
+-------------------------------------------- */
+@media (max-width: 480px) {
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .payment-method-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 14px;
+        text-align: left;
+    }
+    
+    .payment-method-icon {
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+    
+    .payment-method-card .fa-chevron-right {
+        display: block;
+        margin-left: auto;
+        color: var(--text-muted);
+    }
+    
+    .payment-method-card.active .fa-chevron-right {
+        color: var(--primary);
+    }
+    
+    .bank-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .bank-item img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 380px) {
+    .bank-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

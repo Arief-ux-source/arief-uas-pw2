@@ -1,0 +1,232 @@
+/* ============================================================
+   SPP STYLES
+   ============================================================ */
+
+/* --------------------------------------------
+   HEADER
+-------------------------------------------- */
+.spp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.spp-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.spp-header h3 i {
+    color: var(--primary);
+    margin-right: 6px;
+}
+
+.spp-header p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 2px 0 0;
+}
+
+.spp-badge {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+body.dark .spp-badge {
+    background: rgba(15, 157, 138, 0.15);
+}
+
+/* --------------------------------------------
+   SUMMARY
+-------------------------------------------- */
+.spp-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 12px 0 16px;
+}
+
+.spp-summary-item {
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    padding: 12px 8px;
+    text-align: center;
+    border-left: 3px solid var(--border);
+}
+
+.spp-summary-item small {
+    font-size: 10px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.spp-summary-item h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 2px 0 0;
+    color: var(--text-primary);
+}
+
+/* --------------------------------------------
+   TABLE - RAPI
+-------------------------------------------- */
+.spp-table-wrapper {
+    overflow-x: auto;
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.spp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.spp-table thead {
+    background: var(--bg-hover);
+}
+
+.spp-table thead th {
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid var(--border);
+}
+
+.spp-table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.spp-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.spp-table tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+.spp-table tbody tr.paid {
+    opacity: 0.6;
+}
+
+.spp-table tbody tr.paid:hover {
+    background: transparent;
+}
+
+.spp-table tbody td strong {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.spp-table tbody td small {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.spp-table .spp-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.spp-table .spp-checkbox:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* --------------------------------------------
+   TOTAL
+-------------------------------------------- */
+.spp-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: var(--bg-hover);
+    border-radius: var(--radius-md);
+    margin: 12px 0;
+}
+
+.spp-total span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spp-total span i {
+    color: var(--primary);
+}
+
+.spp-total h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+/* --------------------------------------------
+   ACTIONS
+-------------------------------------------- */
+.spp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* --------------------------------------------
+   RESPONSIVE
+-------------------------------------------- */
+@media (max-width: 480px) {
+    .spp-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .spp-table-wrapper {
+        overflow-x: auto;
+    }
+    
+    .spp-table {
+        font-size: 12px;
+        min-width: 500px;
+    }
+    
+    .spp-table thead th,
+    .spp-table tbody td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .spp-table {
+        font-size: 11px;
+        min-width: 400px;
+    }
+    
+    .spp-table thead th,
+    .spp-table tbody td {
+        padding: 6px 8px;
+    }
+}
