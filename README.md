@@ -255,6 +255,8 @@ Aplikasi SAPA dapat diakses secara online melalui platform berikut:
 | Platform | Link | Status |
 |----------|------|--------|
 | 🌐 **GitHub Pages** | [https://arief-ux-source.github.io/arief-uas-pw2/] | ✅ Active |
+| 🌐 **Video Turorial** | [https://www.youtube.com/watch?v=9UVgk8uwOvI] | ✅ Active |
+
 
 ---
 
